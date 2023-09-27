@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth | StarPlace</title>
+    <meta property="og:title" content="Login Page - StarPlace">
+    <meta property="og:description" content="Unleashing Stellar Creativity - StarPlace | Log in or Sign up to continue">
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/885456195152928768/1142511468084998286/1692465420.png">
+    <link rel="canonical" href="https://about:blank">
+    <link rel="alternate" media="handheld" href="https://about:blank">
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://about:blank">
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/885456195152928768/1142511468084998286/1692465420.png">
+    <meta name="description" content="Unleash your Stellar Creativity, with StarPlace - where communities come together!">
+    <meta property="og:site_name" content="Unleashing Stellar Creativity - StarPlace">
+    <meta name="theme-color" content="rgba(33, 33, 33, 0.98)">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <div style="height: 100%; display: flex; color: #fff; align-items: center; flex-direction: column; justify-content: center; background-size: cover; background-position: center;">
+        <div style="text-align: center; padding: 48px 26px 24px; overflow: visible; box-sizing: border-box;">
+            <form id="login-form">
+                <h2>Login</h2>
+                <div style="padding: 10px;">
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="password" name="password" placeholder="Password" autocomplete="off">
+                    <div>
+                        <button type="submit">Login</button>
+                        <button>Forgot Password?</button>
+                    </div>
+                </div>
+            </form>
+            <form id="signup-form">
+                <h2>Signup</h2>
+                <input type="email" name="email" placeholder="Email">
+                <input type="text" name="username" placeholder="Username" autocomplete="off">
+                <input type="password" name="password" placeholder="Password" autocomplete="off">
+                <button type="submit">Signup</button>
+            </form>
+        </div>
+    </div>
+      <script>
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const email = loginForm.email.value;
+            const password = loginForm.password.value;
+            fetch('/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            })
+                .then(response => {
+                if (response.ok) {
+                    // User is authenticated
+                    window.location.href = '/';
+                } else {
+                    // Authentication failed
+                    response.text().then(errorMessage => {
+                    console.error(errorMessage);
+                    });
+                }
+                })
+                .catch(error => {
+                console.error(error);
+                });
+        });
+
+        signupForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const email = signupForm.email.value;
+            const password = signupForm.password.value;
+            const username = signupForm.username.value
+
+            fetch('/auth/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password, username })
+            })
+                .then(response => {
+                if (response.ok) {
+                    // User is authenticated
+                    window.location.href = '/';
+                } else {
+                    // Authentication failed
+                    response.text().then(errorMessage => {
+                    console.error(errorMessage);
+                    });
+                }
+                })
+                .catch(error => {
+                console.error(error);
+                });
+        });
+
+      </script>
+</body>
+</html>

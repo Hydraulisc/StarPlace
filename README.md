@@ -1,9 +1,8 @@
-# [StarPlace](https://starplace.onrender.com)
+# [StarPlace](https://starplace.onrender.com) <img src="/assets/StarPlace-Logo-1.png" style="width: 24px; height: 24px;" width="24px" height="24px">
 
- [![image](https://cdn.virtualwaifubot.com/icons/Hydraulisc-power.png)](https://about.hydraulisc.net)
  
 ### What's Here?
-This is the frontend UI for [StarPlace](https://starplace.onrender.com). It's EJS; a HTML templating language.
+This is the frontend UI for [StarPlace](https://starplace.onrender.com). It's EJS; a HTML templating language, along with some minor CSS for the styling.
 
 The code is designed for the Node.JS environment (express-js with nodemon for live refresh options).
 
@@ -14,3 +13,5 @@ StarPlace (better well known for its "star/place" ("star slash place") URL style
 ## Self-Hosting
 A self-hosting monorepo is in the works. Links will be provided when created.
 -->
+
+ [![image](https://cdn.virtualwaifubot.com/icons/Hydraulisc-power.png)](https://about.hydraulisc.net)
