@@ -1,0 +1,25 @@
+<div class="header-01oozD">
+    <header class="header-position">
+        <div class="header-31oovZ header-V8Sgnz">
+            <div class="title">
+                    <img src="https://cdn.discordapp.com/attachments/885456195152928768/1142511468084998286/1692465420.png" class="logo">
+            </div>
+            <div class="action-buttons">
+                <nav class="nav-3_Sybl">
+                    <div class="links-DGfZfm">
+                        <ul id="navbarthings">
+                            <% if (username) { %>
+                                <span class="link-1naFFL link-2eyudH" onclick="location.href='/upload';">Create a Post?</span>
+                                <span class="link-1naFFL link-2eyudH"  onclick="location.href='/user/<%= uid %>';"><%= username %></span>
+                            <% } else { %>
+                                <span class="link-1naFFL link-2eyudH" onclick="location.href='/?utm_src=header&utm_source=header'">Home</span>
+                                <span class="link-1naFFL link-2eyudH" onclick="location.href='/auth?utm_src=header&utm_source=header';">Log In</span>
+                            <% } %>
+                        </ul>
+                        <div id="credoauth2-scope"></div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+</div>
