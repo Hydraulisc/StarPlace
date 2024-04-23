@@ -18,4 +18,4 @@ StarPlace (better well known for its "star/place" ("star slash place") URL style
 A self-hosting monorepo is in the works. Links will be provided when created.
 -->
 
- [![image](https://cdn.virtualwaifubot.com/icons/Hydraulisc-power.png)](https://about.hydraulisc.net)
+ [![image](https://raw.githubusercontent.com/Hydraulisc/hydraulisc.github.io/main/assets/img/Hydraulisc-power.png)](https://about.hydraulisc.net)
